@@ -1,0 +1,47 @@
+📘 Title: AI Study Assistant — Kaggle Capstone
+🔹 Install & Import
+!pip install -q google-generativeai
+import google.generativeai as genai
+
+🔹 Initialize Model
+API_KEY = "your_api_key_here"  # replace this
+
+genai.configure(api_key=API_KEY)
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+🔹 Define Study Agent
+class StudyAgent:
+    def __init__(self, model):
+        self.model = model
+
+    def explain_topic(self, topic):
+        prompt = f"Explain '{topic}' in simple language."
+        return self.model.generate_content(prompt).text
+
+    def generate_notes(self, topic):
+        prompt = f"Give me short bullet-point study notes for: {topic}"
+        return self.model.generate_content(prompt).text
+
+    def generate_mcq(self, topic):
+        prompt = f"""
+        Generate 5 MCQs for the topic '{topic}'.
+        Format:
+        Q1) question
+        A) option
+        B) option
+        C) option
+        D) option
+        Correct Answer: A
+        """
+        return self.model.generate_content(prompt).text
+
+agent = StudyAgent(model)
+
+🔹 Test 1: Topic Explanation
+agent.explain_topic("Zener Diode")
+
+🔹 Test 2: Study Notes
+agent.generate_notes("Python Loops")
+
+🔹 Test 3: MCQ Quiz Generator
+agent.generate_mcq("Photosynthesis")
