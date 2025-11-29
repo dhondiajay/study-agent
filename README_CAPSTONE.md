@@ -48,3 +48,17 @@ No video search
 - agent.explain_topic("Zener Diode")
 - agent.generate_notes("Python Loops")
 - agent.generate_mcq("Photosynthesis")
+
+- 
+---
+
+## ✔️ Capstone Requirements Covered
+- Single AI agent ✓  
+- Uses Gemini 1.5 Flash ✓  
+- Fully runs inside a notebook ✓  
+- Simple + useful educational function ✓  
+
+---
+
+## 👨‍💻 Created by: Dhondi Ajay (Venom)
+
