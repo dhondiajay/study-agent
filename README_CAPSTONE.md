@@ -36,3 +36,15 @@ No video search
 ---
 
 ## 📄 Files Included
+
+
+---
+
+## 🧪 Example Usage
+
+from study_agent import StudyAgent
+agent = StudyAgent(api_key="YOUR_KEY")
+
+agent.explain_topic("Zener Diode")
+agent.generate_notes("Python Loops")
+agent.generate_mcq("Photosynthesis")
